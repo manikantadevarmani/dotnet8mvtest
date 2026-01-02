@@ -4,7 +4,7 @@ name: Build ASP.Net Core app to an Azure Web App
 env:
   #AZURE_WEBAPP_NAME: asp.net    
   #AZURE_WEBAPP_PACKAGE_PATH: '.' 
-  DOTNET_VERSION: '7'        
+  DOTNET_VERSION: '8'        
 
 on:
   push:
@@ -30,10 +30,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up .NET Core
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+      #- name: Set up .NET Core
+        #uses: actions/setup-dotnet@v4
+        #with:
+          #dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Set up dependency caching for faster builds
         uses: actions/cache@v4
