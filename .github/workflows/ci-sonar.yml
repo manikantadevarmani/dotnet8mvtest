@@ -76,10 +76,11 @@ jobs:
         run: |
           dotnet test dotnet8mvctest/dotnet8mvctest.sln --configuration Release --no-build --logger "trx;LogFilename=test-results.trx" --collect:"XPlat Code Coverage" --results-directory ./TestResults
       - name: SonarQube End
+        working-directory: ${{ github.workspace }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.projectBaseDir="${{ github.workspace }}"
+          *\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       #- name: test with dotnet
         #if: ${{ github.event_name == 'push'  || github.event.inputs.run_tests == 'true' }}
         #run: dotnet test --configuration Release --results-directory ./TestResults --logger "trx;LogFilename=test-results.trx"
