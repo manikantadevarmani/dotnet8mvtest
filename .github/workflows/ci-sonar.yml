@@ -62,7 +62,7 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore dotnet8mvctest/dotnet8mvctest.sln
       - name: Sonarqube Begin
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -70,7 +70,7 @@ jobs:
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"github-dotnet" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build dotnet8mvctest/dotnet8mvctest.sln --configuration Release
 
       - name: Test with Coverage
         run: |
