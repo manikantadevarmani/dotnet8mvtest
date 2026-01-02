@@ -60,7 +60,7 @@
             },
             "coverlet.collector": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.4, )"
             },
             "xunit": {
               "target": "Package",
