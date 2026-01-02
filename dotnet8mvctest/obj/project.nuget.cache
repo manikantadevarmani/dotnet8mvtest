@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8ckaVGd1xWU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hanumesh\\Desktop\\devops\\manikantagoudamain1991\\Githubprojects\\dotnet8.mvc.test\\dotnet8mvctest\\dotnet8mvctest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hanumesh\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
