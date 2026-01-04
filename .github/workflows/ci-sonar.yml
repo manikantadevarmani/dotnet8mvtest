@@ -75,7 +75,7 @@ jobs:
 
       - name: Test with Coverage
         run: |
-          dotnet test dotnet8mvctest/dotnet8mvctest.sln --configuration Release --no-build --logger "trx;LogFilename=test-results.trx" --collect:"XPlat Code Coverage" --results-directory ./TestResults -- DataCollectionRunSetting.DataColletors.DataCollector.Configuration.Format=opencover
+          dotnet test dotnet8mvctest/dotnet8mvctest.sln --configuration Release --no-build --logger "trx;LogFilename=test-results.trx" --collect:"XPlat Code Coverage" --results-directory ./TestResults -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
       - name: SonarQube End
         working-directory: ${{ github.workspace }}
         env:
