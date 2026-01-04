@@ -68,7 +68,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"github-dotnet" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"github-dotnet" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.exclusions="**/*.cshtml,**/*.css,**/*.js,**/wwwroot/**,**/obj/**" /d:sonar.coverage.exclusions="**/*.cshtml,**/*.css,**/*.js"
           
       - name: Build with dotnet
         run: dotnet build dotnet8mvctest/dotnet8mvctest.sln --configuration Release
